@@ -114,7 +114,7 @@ export default function Akadku() {
                 <TableCell>10.00-14.00 WIB</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="text-muted-foreground">Lokasi</TableCell>
+                <TableCell className="text-muted-foreground">Tempat</TableCell>
                 <TableCell>
                   <div className="text-wrap">Vila Situ Bagendit</div>
                 </TableCell>
@@ -161,6 +161,9 @@ export default function Akadku() {
             </Button>
           </div>
         </div>
+      </PageSection>
+      <PageSection>
+        <div className="max-w-prose flex flex-col gap-4"></div>
       </PageSection>
     </article>
   )

@@ -307,7 +307,8 @@ export function BrideGroomChart() {
         panOnScroll={false}
         panOnDrag={false}
         nodesDraggable={false}
-        draggable={false}
+        nodesConnectable={false}
+        elementsSelectable={false}
         zoomOnScroll={false}
         zoomOnPinch={false}
         zoomOnDoubleClick={false}
