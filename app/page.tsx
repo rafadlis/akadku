@@ -99,7 +99,7 @@ export default function Akadku() {
           <p className="text-muted-foreground">
             Dengan memohon Ridho serta Rahmat Allah SWT, kami bermaksud
             menyelenggarakan Akad Nikah putra-putri kami yang In Syaa Allah akan
-            diselenggarakan pada{" "}
+            diselenggarakan pada:{" "}
           </p>
           <Table className="text-base">
             <TableBody>
