@@ -271,8 +271,9 @@ export function BrideEdge({
               transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
               pointerEvents: "all",
             }}
-            className="bg-primary text-background rounded-full p-1.5"
+            className="relative bg-primary text-background rounded-full p-1.5 no-drag"
           >
+            <div className="absolute top-0 left-0 w-full h-full rounded-full animate-ping bg-primary" />
             <HeartIcon weight="fill" />
           </div>
         </EdgeLabelRenderer>
