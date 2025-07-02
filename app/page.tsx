@@ -1,6 +1,14 @@
+import {
+  CalendarStarIcon,
+  MapPinIcon,
+  MapTrifoldIcon,
+} from "@phosphor-icons/react/dist/ssr"
 import { BrideGroomChart } from "./_components/bride-groom-flow"
 import TimerToTarget from "./_components/timer-to-target"
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { Table, TableRow, TableBody, TableCell } from "@/components/ui/table"
 
 const PageSection = ({
   children,
@@ -57,19 +65,101 @@ export default function Akadku() {
         </div>
       </PageSection>
       <PageSection>
-        <div className="flex flex-col gap-4 items-center justify-center max-md:self-start">
-          <p className="text-5xl text-center font-serif">Senin 7.7.2025,</p>
+        <div className="flex flex-col gap-4 items-start justify-start max-md:self-start">
+          <p className="text-5xl font-serif">Senin 7.7.2025,</p>
           <TimerToTarget
             targetDate="2025-07-07T10:00:00+07:00"
             className="text-lg text-center py-1 font-mono "
             labelClassName="text-muted-foreground text-base"
           />
+          <Button
+            size="sm"
+            className="mt-1.5 cursor-pointer rounded-none"
+            asChild
+          >
+            <Link
+              href="https://calendar.app.google/UfFuh8WNdqXv3iAs7"
+              target="_blank"
+            >
+              <CalendarStarIcon weight="fill" />
+              Save The Date
+            </Link>
+          </Button>
         </div>
       </PageSection>
       <PageSection>
         <div className="max-w-prose flex flex-col gap-4">
           <h2 className="font-serif text-5xl">Bride & Groom,</h2>
           <BrideGroomChart />
+        </div>
+      </PageSection>
+      <PageSection>
+        <div className="max-w-prose flex flex-col gap-4">
+          <h2 className="font-serif text-5xl">The Event,</h2>
+          <p className="text-muted-foreground">
+            Dengan memohon Ridho serta Rahmat Allah SWT, kami bermaksud
+            menyelenggarakan Akad Nikah putra-putri kami yang In Syaa Allah akan
+            diselenggarakan pada{" "}
+          </p>
+          <Table className="text-base">
+            <TableBody>
+              <TableRow>
+                <TableCell className="text-muted-foreground">
+                  Hari/Tanggal
+                </TableCell>
+                <TableCell>Senin, 7 Juli 2025</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="text-muted-foreground">Waktu</TableCell>
+                <TableCell>10.00-14.00 WIB</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="text-muted-foreground">Lokasi</TableCell>
+                <TableCell>
+                  <div className="text-wrap">Vila Situ Bagendit</div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="text-muted-foreground">Alamat</TableCell>
+                <TableCell>
+                  <div className="text-wrap">
+                    Jl. H. Hasan Arif No.005, Kp. Rancakujang, Cipicung, Kec.
+                    Banyuresmi, Kab. Garut, Jawa Barat
+                  </div>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <div className="flex gap-2 justify-start items-center">
+            <Button
+              size="sm"
+              className="cursor-pointer rounded-none"
+              variant="outline"
+              asChild
+            >
+              <Link
+                href="https://maps.app.goo.gl/1RDeFyE1gxhwu4vM7"
+                target="_blank"
+              >
+                <MapTrifoldIcon weight="fill" />
+                Buka Peta
+              </Link>
+            </Button>
+            <Button
+              size="sm"
+              className="cursor-pointer rounded-none"
+              variant="outline"
+              asChild
+            >
+              <Link
+                href="https://calendar.app.google/UfFuh8WNdqXv3iAs7"
+                target="_blank"
+              >
+                <CalendarStarIcon weight="fill" />
+                Save The Date
+              </Link>
+            </Button>
+          </div>
         </div>
       </PageSection>
     </article>
