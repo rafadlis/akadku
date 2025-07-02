@@ -29,8 +29,8 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "Rafadlis | Crafter",
-  description: "Personal Website",
+  title: "Elin & Fadli",
+  description: "Wedding Invitation",
 }
 
 export default function RootLayout({
