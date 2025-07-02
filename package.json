@@ -12,6 +12,7 @@
     "@number-flow/react": "^0.5.10",
     "@phosphor-icons/react": "^2.1.10",
     "@vercel/analytics": "^1.5.0",
+    "@xyflow/react": "^12.8.1",
     "animejs": "^4.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
