@@ -24,24 +24,16 @@ export default function Akadku() {
   return (
     <article className="min-h-dvh flex flex-col items-center justify-center px-4">
       <PageSection>
-        <p className="text-lg text-center font-black px-2.5 py-0.5 bg-foreground text-background max-md:self-start">
-          AKAD
+        <p className="text-lg text-center max-md:self-start font-serif">
+          Akad, the wedding
         </p>
         <h1 className="text-9xl font-medium font-serif">
           Elin <span className="font-extralight">&</span> Fadli
         </h1>
-        <div className="flex flex-row gap-4 items-center justify-center max-md:self-start">
-          <TimerToTarget
-            targetDate="2025-07-07T10:00:00+07:00"
-            className="text-lg text-center py-1 font-mono"
-          />
-          <p className="text-lg text-center font-mono mr-1">~</p>
-          <p className="text-lg text-center py-1 font-mono">7.7.2025</p>
-        </div>
       </PageSection>
       <PageSection>
         <div className="max-w-prose flex flex-col gap-4 group *:transition-colors duration-600">
-          <p className="font-serif text-5xl">QS. ar-rum 21</p>
+          <h2 className="font-serif text-5xl">QS ar-rum 21,</h2>
           <p className="text-muted-foreground *:duration-600">
             Dan di antara tanda-tanda kekuasaan-Nya diciptakan-Nya untukmu{" "}
             <span className="md:group-hover:text-foreground font-medium max-md:text-foreground">
@@ -61,6 +53,21 @@ export default function Akadku() {
             </span>{" "}
             bagi orang-orang yang berpikir
           </p>
+        </div>
+      </PageSection>
+      <PageSection>
+        <div className="flex flex-col gap-4 items-center justify-center max-md:self-start">
+          <p className="text-5xl text-center font-serif">Senin 7.7.2025,</p>
+          <TimerToTarget
+            targetDate="2025-07-07T10:00:00+07:00"
+            className="text-lg text-center py-1 font-mono "
+            labelClassName="text-muted-foreground text-base"
+          />
+        </div>
+      </PageSection>
+      <PageSection>
+        <div className="max-w-prose flex flex-col gap-4">
+          <h2 className="font-serif text-5xl">Bride & Groom,</h2>
         </div>
       </PageSection>
     </article>
