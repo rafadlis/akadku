@@ -20,7 +20,7 @@ const PageSection = ({
   return (
     <section
       className={cn(
-        "h-dvh flex flex-col justify-center gap-6 items-center",
+        "h-svh flex flex-col justify-center gap-6 items-center",
         className
       )}
     >
