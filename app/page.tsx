@@ -1,3 +1,4 @@
+import { BrideGroomChart } from "./_components/bride-groom-flow"
 import TimerToTarget from "./_components/timer-to-target"
 import { cn } from "@/lib/utils"
 
@@ -68,6 +69,7 @@ export default function Akadku() {
       <PageSection>
         <div className="max-w-prose flex flex-col gap-4">
           <h2 className="font-serif text-5xl">Bride & Groom,</h2>
+          <BrideGroomChart />
         </div>
       </PageSection>
     </article>
