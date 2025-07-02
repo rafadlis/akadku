@@ -11,6 +11,7 @@
   "dependencies": {
     "@number-flow/react": "^0.5.10",
     "@phosphor-icons/react": "^2.1.10",
+    "@radix-ui/react-slot": "^1.2.3",
     "@vercel/analytics": "^1.5.0",
     "@xyflow/react": "^12.8.1",
     "animejs": "^4.0.2",
