@@ -118,7 +118,7 @@ export function BrideGroomNode({ data }: NodeProps<BrideGroomNode>) {
         id="left-target"
         style={{ opacity: 0 }}
       />
-      <div className="flex flex-col items-center justify-center border px-4 py-1.5 bg-muted/50">
+      <div className="flex flex-col items-center justify-center border px-4 py-1.5 bg-muted/50 nodrag nopan">
         <div className="text-sm font-serif">{data.name}</div>
         <div className="text-xs text-muted-foreground">{data.role}</div>
       </div>
