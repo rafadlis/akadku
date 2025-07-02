@@ -296,7 +296,7 @@ export function BrideGroomChart() {
   const [nodes] = useNodesState(initialNodes)
   const [edges] = useEdgesState(initialEdges)
   return (
-    <div className="md:h-[400px] h-[300px] w-full">
+    <div className="md:h-[500px] h-[400px] w-full">
       <ReactFlow
         nodes={nodes}
         nodeTypes={nodeTypes}
