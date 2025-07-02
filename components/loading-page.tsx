@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils"
 import RDotIconLoading from "./r-dot-icon-loading"
-import { CircleNotchIcon } from "@phosphor-icons/react"
 
 export function LoadingPage({ fullPage = false }: { fullPage?: boolean }) {
   return (
@@ -12,7 +11,7 @@ export function LoadingPage({ fullPage = false }: { fullPage?: boolean }) {
         fullPage && "h-svh"
       )}
     >
-      <CircleNotchIcon className="animate-spin" />
+      <RDotIconLoading className="size-10" />
     </section>
   )
 }
