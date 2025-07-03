@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Table, TableRow, TableBody, TableCell } from "@/components/ui/table"
+import { UcapanDoa } from "./_components/ucapan-doa"
+import { SalinNoRekening } from "./_components/salin-no-rekening"
 
 const PageSection = ({
   children,
@@ -163,8 +165,40 @@ export default function Akadku() {
         </div>
       </PageSection>
       <PageSection>
-        <div className="max-w-prose flex flex-col gap-4"></div>
+        <UcapanDoa />
       </PageSection>
+      <PageSection>
+        <div className="max-w-prose flex flex-col gap-4">
+          <h2 className="font-serif text-5xl">Amplop,</h2>
+          <p className="text-muted-foreground">
+            Bapak/Ibu/Saudara/i bagi yang mau memberikan Amplop secara digital,
+            silahkan dapat mentransfer ke nomor rekening dibawah,
+          </p>
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell className="text-muted-foreground">
+                  Bank Jago
+                </TableCell>
+                <TableCell>
+                  <div className="text-wrap">5098 7937 8625</div>
+                </TableCell>
+                <TableCell>
+                  <SalinNoRekening />
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </PageSection>
+      <footer className="text-sm text-muted-foreground py-6">
+        made{" "}
+        <Link href="https://rafadlis.space" target="_blank">
+          @Rafadlis
+        </Link>
+        {" - "}
+        2025
+      </footer>
     </article>
   )
 }

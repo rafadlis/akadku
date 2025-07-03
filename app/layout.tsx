@@ -3,6 +3,7 @@ import { Roboto, Roboto_Serif, Roboto_Mono } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/next"
+import Providers from "@/components/providers"
 import { Toaster } from "@/components/ui/sonner"
 
 const robotoMono = Roboto_Mono({
@@ -50,7 +51,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Providers>
+            {children}
+            <Analytics />
             <Toaster richColors />
+          </Providers>
         </ThemeProvider>
       </body>
     </html>
