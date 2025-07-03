@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { formatDistanceToNow } from "date-fns"
 import { id } from "date-fns/locale"
+import Link from "next/link"
 
 import { addData } from "../_actions/add-data"
 import { getData } from "../_lib/get-data"
@@ -33,7 +34,7 @@ export function UcapanDoa() {
   // 2. Data fetching using useQuery
   const { data, isLoading } = useQuery({
     queryKey: ["guestbook"],
-    queryFn: getData,
+    queryFn: () => getData({ pageParam: 0 }),
   })
 
   // 3. Realtime subscription with Supabase
@@ -118,9 +119,17 @@ export function UcapanDoa() {
   return (
     <div className="max-w-prose flex flex-col gap-4">
       <h2 className="text-5xl font-serif">Doa & Ucapan,</h2>
+      <p className="text-muted-foreground">
+        Jumlah {data?.length} pesan, yang tercatat akan hadir {stats.hadir}{" "}
+        orang, tidak hadir {stats["tidak hadir"]} orang, dan tidak yakin
+        {stats["tidak yakin"]} orang.
+      </p>
       <div className="flex flex-col gap-4">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-4 mt-2"
+          >
             <FormField
               control={form.control}
               name="name"
@@ -211,21 +220,6 @@ export function UcapanDoa() {
             </Button>
           </form>
         </Form>
-        {/* <div className="flex items-center justify-around gap-4 pt-4">
-          <div className="flex flex-row justify-center items-center gap-2">
-            <CheckCircleIcon className="text-muted-foreground" />
-            <p className="font-bold">{stats.hadir}</p>
-          </div>
-          <div className="flex flex-row justify-center items-center gap-2">
-            <XCircleIcon className="text-muted-foreground" />
-            <p>{stats["tidak hadir"]}</p>
-          </div>
-          <div className="flex flex-row justify-center items-center gap-2">
-            <QuestionIcon className="text-muted-foreground" />
-            <p className="font-bold">{stats["tidak yakin"]}</p>
-          </div>
-        </div> */}
-        <div></div>
         <div className="mt-8 space-y-6">
           {isLoading && <p>Loading messages...</p>}
           {data?.map((item) => (
@@ -243,6 +237,11 @@ export function UcapanDoa() {
               </p>
             </div>
           ))}
+        </div>
+        <div className="mt-6 flex justify-center">
+          <Button asChild variant="outline" className="rounded-none">
+            <Link href="/messages">Lihat Semua Pesan</Link>
+          </Button>
         </div>
       </div>
     </div>
