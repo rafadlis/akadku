@@ -9,6 +9,7 @@ import { toast } from "sonner"
 import { formatDistanceToNow } from "date-fns"
 import { id } from "date-fns/locale"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 import { addData } from "../_actions/add-data"
 import { getData } from "../_lib/get-data"
@@ -30,6 +31,7 @@ export function UcapanDoa() {
   // 1. TanStack Query and Supabase client setup
   const queryClient = useQueryClient()
   const supabase = createSupabaseClient()
+  const router = useRouter()
 
   // 2. Data fetching using useQuery
   const { data, isLoading } = useQuery({
@@ -50,6 +52,7 @@ export function UcapanDoa() {
         },
         () => {
           queryClient.invalidateQueries({ queryKey: ["guestbook"] })
+          router.refresh()
         }
       )
       .subscribe()
@@ -73,6 +76,8 @@ export function UcapanDoa() {
     mutationFn: addData,
     onSuccess: (result) => {
       if (result.success) {
+        queryClient.invalidateQueries({ queryKey: ["guestbook"] })
+        router.refresh()
         toast.success(result.message)
         form.reset()
       } else {
