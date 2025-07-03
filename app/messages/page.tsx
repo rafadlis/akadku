@@ -4,13 +4,12 @@ import { useInfiniteQuery } from "@tanstack/react-query"
 import { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import Link from "next/link"
-import { ArrowLeft } from "@phosphor-icons/react"
+import { ArrowLeftIcon, CircleNotchIcon } from "@phosphor-icons/react"
 import { formatDistanceToNow } from "date-fns"
 import { id } from "date-fns/locale"
 
 import { getData } from "../_lib/get-data"
 import { Button } from "@/components/ui/button"
-import RDotIconLoading from "@/components/r-dot-icon-loading"
 
 export default function MessagesPage() {
   const { ref, inView } = useInView({
@@ -48,7 +47,7 @@ export default function MessagesPage() {
       <div className="flex flex-col items-start gap-4 mb-8">
         <Button variant="outline" size="sm" asChild className="rounded-none">
           <Link href="/">
-            <ArrowLeft /> Kembali
+            <ArrowLeftIcon /> Kembali
           </Link>
         </Button>
         <h1 className="text-5xl font-serif">Semua Ucapan & Doa,</h1>
@@ -56,7 +55,7 @@ export default function MessagesPage() {
 
       {status === "pending" ? (
         <div className="flex justify-center items-center h-10">
-          <RDotIconLoading />
+          <CircleNotchIcon className="animate-spin" /> Memuat pesan...
         </div>
       ) : status === "error" ? (
         <p>Error: {error.message}</p>
@@ -87,7 +86,11 @@ export default function MessagesPage() {
                 onClick={() => fetchNextPage()}
                 disabled={isFetchingNextPage}
               >
-                {isFetchingNextPage ? <RDotIconLoading /> : ""}
+                {isFetchingNextPage ? (
+                  <CircleNotchIcon className="animate-spin" />
+                ) : (
+                  ""
+                )}
               </Button>
             )}
             {!hasNextPage && messages.length > 0 && (
