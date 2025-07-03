@@ -3,14 +3,14 @@
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 
-export function SalinNoRekening() {
+export function SalinNoRekening({ noRekening }: { noRekening: string }) {
   return (
     <Button
       variant="outline"
       size="sm"
       className="cursor-pointer rounded-none"
       onClick={() => {
-        navigator.clipboard.writeText("5098 7937 8625").then(() => {
+        navigator.clipboard.writeText(noRekening).then(() => {
           toast.success("Berhasil menyalin nomor rekening")
         })
       }}
