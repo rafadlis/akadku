@@ -184,7 +184,18 @@ export default function Akadku() {
                   <div className="text-wrap">5098 7937 8625</div>
                 </TableCell>
                 <TableCell>
-                  <SalinNoRekening />
+                  <SalinNoRekening noRekening="509879378625" />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="text-muted-foreground">
+                  Bank BCA
+                </TableCell>
+                <TableCell>
+                  <div className="text-wrap">1482112981</div>
+                </TableCell>
+                <TableCell>
+                  <SalinNoRekening noRekening="1482112981" />
                 </TableCell>
               </TableRow>
             </TableBody>
