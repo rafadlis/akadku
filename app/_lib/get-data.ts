@@ -7,6 +7,7 @@ import { desc } from "drizzle-orm"
 export async function getData() {
   const data = await db.query.guestbook.findMany({
     orderBy: [desc(guestbook.createdAt)],
+    limit: 15,
   })
   return data
 }
