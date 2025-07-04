@@ -67,6 +67,27 @@ export default function Akadku() {
         </div>
       </PageSection>
       <PageSection>
+        <div className="max-w-prose flex flex-col gap-4 ">
+          <h2 className="font-serif text-5xl">The Playlist,</h2>
+          <p className="text-muted-foreground">
+            Kami menyediakan playlist untuk para pengunjung undangan website,
+            silahkan dapat mendengarkan playlist ini secara legal dan aman, kami
+            telah mengikuti privacy & policy dari Spotify.
+          </p>
+          <iframe
+            id="embed-iframe"
+            className="rounded-xl"
+            src="https://open.spotify.com/embed/playlist/0JFWAQMElfCg7pZDKf2sLA?utm_source=generator"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </PageSection>
+      <PageSection>
         <div className="flex flex-col gap-4 items-start justify-start max-md:self-start">
           <p className="text-5xl font-serif">Senin 7.7.2025,</p>
           <TimerToTarget
@@ -202,6 +223,7 @@ export default function Akadku() {
           </Table>
         </div>
       </PageSection>
+
       <footer className="text-sm text-muted-foreground py-6">
         made{" "}
         <Link href="https://rafadlis.space" target="_blank">

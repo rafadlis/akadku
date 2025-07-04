@@ -5,6 +5,7 @@ import "./globals.css"
 import { Analytics } from "@vercel/analytics/next"
 import Providers from "@/components/providers"
 import { Toaster } from "@/components/ui/sonner"
+import Script from "next/script"
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({
           </Providers>
         </ThemeProvider>
       </body>
+      <Script src="https://open.spotify.com/embed/iframe-api/v1" async />
     </html>
   )
 }
