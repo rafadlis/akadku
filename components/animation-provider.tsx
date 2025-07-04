@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { animate, createScope, onScroll, utils } from "animejs"
+import { animate, createScope, onScroll, Scope, utils } from "animejs"
 import { cn } from "@/lib/utils"
 
 interface ScrollProgressBarProps {
@@ -14,7 +14,7 @@ export function AnimationProvider({
   children,
 }: ScrollProgressBarProps) {
   const root = useRef<HTMLDivElement>(null)
-  const scope = useRef<any>(null)
+  const scope = useRef<Scope>(null)
 
   useEffect(() => {
     if (!root.current) return
