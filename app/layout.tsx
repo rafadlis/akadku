@@ -6,6 +6,8 @@ import { Analytics } from "@vercel/analytics/next"
 import Providers from "@/components/providers"
 import { Toaster } from "@/components/ui/sonner"
 import Script from "next/script"
+import CursorFollower from "@/components/cursor-follower"
+import { AnimationProvider } from "@/components/animation-provider"
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -44,20 +46,26 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${roboto.variable} ${robotoSerif.variable} ${robotoMono.variable} antialiased min-h-dvh selection:bg-primary selection:text-primary-foreground`}
+        className={`${roboto.variable} ${robotoSerif.variable} ${robotoMono.variable} antialiased min-h-dvh selection:bg-primary selection:text-primary-foreground relative isolate scroll-container`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Providers>
-            {children}
-            <Analytics />
+        <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <AnimationProvider>
+              <div className="fixed top-0 left-0 w-full z-50 h-2">
+                <div className="progress-bar bg-primary h-full w-0" />
+              </div>
+              <CursorFollower />
+              {children}
+              <Analytics />
+            </AnimationProvider>
             <Toaster richColors />
-          </Providers>
-        </ThemeProvider>
+          </ThemeProvider>
+        </Providers>
       </body>
       <Script src="https://open.spotify.com/embed/iframe-api/v1" async />
     </html>
