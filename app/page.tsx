@@ -73,7 +73,7 @@ export default function Akadku() {
             Kami menyediakan musik untuk para pengunjung undangan, Anda dapat
             mendengarkan namun perlu{" "}
             <Link
-              href="https://www.spotify.com/id/account/login/"
+              href="https://accounts.spotify.com/id/login?continue=https%3A%2F%2Fakad.rafadlis.space"
               target="_blank"
               className="underline"
             >
