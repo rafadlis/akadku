@@ -70,9 +70,17 @@ export default function Akadku() {
         <div className="max-w-prose flex flex-col gap-4 ">
           <h2 className="font-serif text-5xl">The Playlist,</h2>
           <p className="text-muted-foreground">
-            Kami menyediakan playlist untuk para pengunjung undangan website,
-            silahkan dapat mendengarkan playlist ini secara legal dan aman, kami
-            telah mengikuti privacy & policy dari Spotify.
+            Kami menyediakan musik untuk para pengunjung undangan, Anda dapat
+            mendengarkan namun perlu{" "}
+            <Link
+              href="https://www.spotify.com/id/account/login/"
+              target="_blank"
+              className="underline"
+            >
+              login terlebih dahulu ke Spotify
+            </Link>{" "}
+            di browser Anda. Ini demi privacy & policy dari Spotify dan
+            kebijakan penyiaran musik Indonesia.
           </p>
           <iframe
             id="embed-iframe"
