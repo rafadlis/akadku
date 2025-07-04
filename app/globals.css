@@ -118,3 +118,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+.cursor-follower {
+  position: fixed;
+  top: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    circle,
+    oklch(from var(--primary) l c h / 0.1) 0%,
+    oklch(from var(--secondary) l c h / 0.05) 50%,
+    transparent 70%
+  );
+  filter: blur(50px);
+  z-index: -1;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+@media (max-width: 768px) {
+  .cursor-follower {
+    top: 0;
+    left: 50%;
+    margin-left: -150px;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+}
