@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/sonner"
 import Script from "next/script"
 import CursorFollower from "@/components/cursor-follower"
 import { AnimationProvider } from "@/components/animation-provider"
+import { BackgroundAnimation } from "@/components/background-animation"
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -56,6 +57,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <AnimationProvider>
+              <BackgroundAnimation />
               <div className="fixed top-0 left-0 w-full z-50 h-2">
                 <div className="progress-bar bg-primary h-full w-0" />
               </div>
